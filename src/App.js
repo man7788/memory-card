@@ -1,28 +1,35 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Game from './components/Game';
-import ScoreBoard from './components/ScoreBoard';
 
 function App() {
   const [score, setScore] = useState(0);
   const [best, setBest] = useState(0);
+
+  const addScore = () => {
+    setScore(score + 1);
+  };
+
+  useEffect(() => {
+    if (score > best) {
+      setBest(score);
+    }
+  }, [score]);
+
+  const resetScore = () => {
+    setScore(0);
+  };
+
+  const names = ['AAA', 'BBB', 'CCC'];
+
   return (
     <div>
-      <ScoreBoard />
-      <Game />
+      <div>{score}</div>
+      <div>{best}</div>
+      <Game names={names} addScore={addScore} resetScore={resetScore} />
     </div>
   );
 }
 
 export default App;
-// 1. ScoreBoard
-// // a. Current Score
-// // b. Best Score
-
-// 2. Display Cards
-
-// 3. Random Cards Function
-
-// App -> ScoreBoard -> Current Score
-//                   -> Best Score
-//     -> Game       -> Cards
