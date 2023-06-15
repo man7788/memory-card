@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
+import '../styles/game.css';
 import uniqid from 'uniqid';
 import Card from './Card';
 
@@ -30,7 +31,7 @@ const Game = (props) => {
     return <Card key={uniqid()} name={card} selectCard={selectCard} />;
   });
 
-  return <div>{cards}</div>;
+  return <div class="game-div">{cards}</div>;
 };
 
 export default Game;

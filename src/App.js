@@ -6,7 +6,14 @@ import Game from './components/Game';
 function App() {
   const [score, setScore] = useState(0);
   const [best, setBest] = useState(0);
-  const [names, setNames] = useState(['AAA', 'BBB', 'CCC', 'DDD', 'EEE']);
+  const [names, setNames] = useState([
+    '\u{2660}',
+    'BBB',
+    'CCC',
+    'DDD',
+    'EEE',
+    'FFF',
+  ]);
 
   const addScore = () => {
     setScore(score + 1);
@@ -48,14 +55,19 @@ function App() {
 
   return (
     <div>
-      <div>Current Score: {score}</div>
-      <div>Best Score: {best}</div>
-      <Game
-        names={names}
-        addScore={addScore}
-        resetScore={resetScore}
-        randomCards={randomCards}
-      />
+      <div className="info-div">
+        <div className="title">Memory Card</div>
+        <div className="score">Current Score: {score}</div>
+        <div className="score">Best Score: {best}</div>
+      </div>
+      <div>
+        <Game
+          names={names}
+          addScore={addScore}
+          resetScore={resetScore}
+          randomCards={randomCards}
+        />
+      </div>
     </div>
   );
 }

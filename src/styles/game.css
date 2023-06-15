@@ -1,0 +1,5 @@
+.game-div {
+  border: 2px solid yellow;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

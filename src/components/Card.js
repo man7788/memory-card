@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/card.css';
 
 const Card = (props) => {
   const { name, selectCard } = props;
@@ -7,7 +8,11 @@ const Card = (props) => {
     selectCard(e.target.textContent);
   };
 
-  return <div onClick={select}>{name}</div>;
+  return (
+    <div className="card" onClick={select}>
+      {name}
+    </div>
+  );
 };
 
 export default Card;
