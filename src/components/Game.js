@@ -6,7 +6,7 @@ import Card from './Card';
 const Game = (props) => {
   const [record, setRecord] = useState([]);
 
-  const { names, addScore, resetScore } = props;
+  const { names, addScore, resetScore, randomCards } = props;
 
   const addRecord = (card) => {
     const check = record.filter((item) => card === item);
@@ -15,6 +15,7 @@ const Game = (props) => {
       newRecord.push(card);
       setRecord(newRecord);
       addScore();
+      randomCards();
     } else {
       resetScore();
       setRecord([]);
