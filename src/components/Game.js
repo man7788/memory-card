@@ -31,7 +31,7 @@ const Game = (props) => {
     return <Card key={uniqid()} name={card} selectCard={selectCard} />;
   });
 
-  return <div class="game-div">{cards}</div>;
+  return <div className="game-div">{cards}</div>;
 };
 
 export default Game;

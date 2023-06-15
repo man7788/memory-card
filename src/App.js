@@ -7,13 +7,17 @@ function App() {
   const [score, setScore] = useState(0);
   const [best, setBest] = useState(0);
   const [names, setNames] = useState([
-    '\u{2660}',
-    'BBB',
-    'CCC',
-    'DDD',
-    'EEE',
-    'FFF',
+    '\u{1F0A1}',
+    '\u{1F0B1}',
+    '\u{1F0C1}',
+    '\u{1F0D1}',
+    '\u{1F0A0}',
+    '\u{1F0DF}',
   ]);
+
+  useEffect(() => {
+    randomCards();
+  }, []);
 
   const addScore = () => {
     setScore(score + 1);
