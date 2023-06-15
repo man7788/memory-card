@@ -9,8 +9,7 @@ const Game = (props) => {
   const { names, addScore, resetScore, randomCards } = props;
 
   const addRecord = (card) => {
-    const check = record.filter((item) => card === item);
-    if (check.length === 0) {
+    if (!record.includes(card)) {
       const newRecord = record.map((item) => item);
       newRecord.push(card);
       setRecord(newRecord);
