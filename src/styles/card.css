@@ -1,5 +1,5 @@
 .card {
-  /* border: 2px solid whitesmoke; */
+  border: 2px solid whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,4 +7,8 @@
   width: 140px;
   margin: 10px;
   font-size: 250px;
+}
+
+.card img {
+  width: 10rem;
 }
