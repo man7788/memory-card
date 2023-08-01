@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/card.css';
 
 const Card = (props) => {
-  const { name, selectCard } = props;
+  const { name, img, selectCard } = props;
 
   const select = (e) => {
-    selectCard(e.target.textContent);
+    selectCard(e.target.alt);
   };
 
   return (
     <div className="card" onClick={select}>
-      {name}
+      <img src={img} alt={name} />
     </div>
   );
 };
